@@ -6,6 +6,7 @@ use App\Data\SearchData;
 use App\Form\SearchForm;
 use App\Repository\ProductRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -23,6 +24,13 @@ class ProductController extends AbstractController
         //dd($data);
         [$min, $max] = $productRepository->findMinMax($data);
         $products = $productRepository->findBySearch($data);
+        if ($request->get('ajax')){
+            return new JsonResponse([
+               'content'=> $this->renderView('product/_products.html.twig',['products'=>$products]),
+                'sorting'=> $this->renderView('product/_sorting.html.twig',['products'=> $products]),
+                'pagination'=> $this->renderView('product/_pagination.html.twig',['products'=> $products])
+            ]);
+        }
         return $this->render('product/index.html.twig', [
             'products'=>$products,
             'form'=>$form->createView(),

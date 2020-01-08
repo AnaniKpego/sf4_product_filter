@@ -5,22 +5,19 @@
 {% block body %}
     <div class="container js-filter">
        <div class="row">
-           <div class="col-md-3 js-filter-form">
+           <div class="col-md-3">
                 {% include'product/_filter.html.twig' with {form: form, min: min, max: max} only %}
            </div>
            <div class="col-md-9">
                <div class="d-flex justify-content-end mb-2 js-filter-sorting">
-                   {{ knp_pagination_sortable(products, 'Prix', 'p.price') }}
-                   {{ knp_pagination_sortable(products, 'Promo', 'p.promo') }}
+                   {% include 'product/_sorting.html.twig'%}
                </div>
                <div class="grid js-filter-content">
-                   {% for product in products %}
-                       {% include 'product/_cart.html.twig' with {product: product} only %}
-                   {% endfor%}
+                   {% include 'product/_products.html.twig'%}
                </div>
 
                <div class="pt-2 float-right js-filter-pagination">
-                   {{ knp_pagination_render(products) }}
+                   {% include 'product/_pagination.html.twig'%}
                </div>
            </div>
        </div>
