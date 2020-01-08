@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="14289da1-1551-4c97-bd08-4534a6020d4a" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/modules/Filter.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/product/_pagination.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/product/_products.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/product/_sorting.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/product/_filter.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/product/_filter.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/product/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/product/index.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ProductDatabase/database.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -86,14 +78,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Filter.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Filter.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/js/modules/Filter.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="57" column="10" selection-start-line="57" selection-start-column="10" selection-end-line="57" selection-end-column="10" />
+            <state relative-caret-position="73">
+              <caret line="52" column="39" lean-forward="true" selection-start-line="52" selection-start-column="39" selection-end-line="52" selection-end-column="39" />
               <folding>
                 <element signature="e#806#916#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".env" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.env">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="350">
+              <caret line="29" column="56" selection-start-line="29" selection-start-column="56" selection-end-line="29" selection-end-column="56" />
             </state>
           </provider>
         </entry>
@@ -155,7 +156,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/src/Migrations/Version20191209130147.php" />
         <option value="$PROJECT_DIR$/src/Entity/Product.php" />
         <option value="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" />
@@ -191,6 +191,7 @@
         <option value="$PROJECT_DIR$/templates/product/_pagination.html.twig" />
         <option value="$PROJECT_DIR$/templates/product/index.html.twig" />
         <option value="$PROJECT_DIR$/assets/js/modules/Filter.js" />
+        <option value="$PROJECT_DIR$/.env" />
       </list>
     </option>
   </component>
@@ -362,19 +363,7 @@
             <path>
               <item name="sf4_product_filter" type="b2602c69:ProjectViewProjectNode" />
               <item name="sf4_product_filter" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sf4_product_filter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sf4_product_filter" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="sf4_product_filter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sf4_product_filter" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="product" type="462c0819:PsiDirectoryNode" />
+              <item name="var" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -393,13 +382,14 @@
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\projects\ProductFilterSf4\templates\admin" />
-      <recent name="E:\projects\ProductFilterSf4\public\assets" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\projects\ProductFilterSf4\src\Controller" />
       <recent name="E:\projects\ProductFilterSf4\templates\product" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\projects\sf4_product_filter\src\ProductDatabase" />
+      <recent name="E:\projects\ProductFilterSf4\templates\admin" />
+      <recent name="E:\projects\ProductFilterSf4\public\assets" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -433,12 +423,12 @@
       <workItem from="1577216534100" duration="5418000" />
       <workItem from="1578482464973" duration="5232000" />
       <workItem from="1578493636372" duration="1122000" />
-      <workItem from="1578498267330" duration="13298000" />
+      <workItem from="1578498267330" duration="14069000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="109384000" />
+    <option name="totallyTimeSpent" value="110155000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
@@ -555,13 +545,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config/packages/validator.yaml">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="27" column="49" selection-start-line="27" selection-start-column="49" selection-end-line="27" selection-end-column="49" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/packages/doctrine.yaml">
       <provider selected="true" editor-type-id="text-editor">
@@ -773,11 +756,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/modules/Filter.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="57" column="10" selection-start-line="57" selection-start-column="10" selection-end-line="57" selection-end-column="10" />
+        <state relative-caret-position="73">
+          <caret line="52" column="39" lean-forward="true" selection-start-line="52" selection-start-column="39" selection-end-line="52" selection-end-column="39" />
           <folding>
             <element signature="e#806#916#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="29" column="56" selection-start-line="29" selection-start-column="56" selection-end-line="29" selection-end-column="56" />
         </state>
       </provider>
     </entry>
