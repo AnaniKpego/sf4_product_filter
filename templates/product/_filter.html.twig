@@ -1,0 +1,19 @@
+{{ form_start(form, {attr: {class: 'filter'}})}}
+    {{ form_row(form.q) }}
+
+    <h4>Catégories</h4>
+    {{ form_row(form.categories) }}
+
+    <h4>Prix</h4>
+    <div class="row">
+        <div class="col-md-6">
+            {{ form_row(form.min) }}
+        </div><div class="col-md-6">
+            {{ form_row(form.max) }}
+        </div>
+    </div>
+    <div class="slider" id="slider-price" data-min="{{ min }}"data-max="{{ max }}"></div>
+    <h4>Promotions</h4>
+    {{ form_row(form.promo) }}
+    <button type="submit" class="btn btn-primary w-100">RECHERCHER</button>
+{{ form_end(form) }}

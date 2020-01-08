@@ -1,0 +1,36 @@
+<div class="card">
+    <img src="{{ product.image }}" alt="" class="card-img-top">
+    <div class="card-body">
+        <h5 class="card-title">{{ product.name }}</h5>
+        <div class="card-title text-primary" style="font-weight: bold; font-size: 1rem">
+            {{ product.price | number_format(0, ',', ' ') }} Fcfa
+            {% if product.promo %}
+            <div class="text-warning">En promo!</div>
+            {% endif %}
+
+        </div>
+        <p class="text text-muted">{{ product.description }}</p>
+
+        <div>
+
+                <em class="text-muted text-primary text-italic">#{{ product.categories.name }}</em>
+
+        </div>
+
+        <div class="row col-md-12">
+            <div class="col-md-6">
+                <a class="btn btn-warning" href="{{ path('product.admin.edit', {id: product.id}) }}">EDITER</a>
+            </div>
+            <div class="col-md-6">
+                <form method="POST" action="{{ path('product.admin.delete', {id: product.id}) }}" onsubmit="return confirm('Etes vous sûre de supprimer ce produit ?')">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ product.id) }}">
+                    <button class="btn btn-danger">Supprimer</button>
+                </form>
+
+
+            </div>
+        </div>
+
+    </div>
+</div>

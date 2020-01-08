@@ -1,0 +1,17 @@
+{{ form_start(form) }}
+<div class="row col-md-12">
+    <div class="col-md-4">{{ form_row(form.name) }}</div>
+    <div class="col-md-4">{{ form_row(form.price) }}</div>
+    <div class="col-md-4">{{ form_row(form.categories) }}</div>
+</div>
+<div class="row col-md-12">
+    <div class="col-md-5">{{ form_row(form.image) }}</div>
+    <div class="col-md-7">{{ form_row(form.description) }}</div>
+</div>
+<div class="row col-md-12">
+    <div class="col-md-10">{{ form_row(form.content) }}</div>
+    <div class="col-md-4">{{ form_row(form.promo) }}</div>
+</div>
+{{ form_rest(form) }}
+<button class="btn btn-primary">{{ button|default('Creer') }}</button>
+{{ form_end(form) }}

@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Votre Panier
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="bg-light p-3">
+            <h1>Votre panier <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+            </h1>
+        </div>
+        {% if items | length >0 %}
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Produit</th>
+                    <th>Prix</th>
+                    <th>Quantité</th>
+                    <th>Augmenter</th>
+                    <th>Soustraire</th>
+                    <th>Total</th>
+                    <th>Supprimer</th>
+                </tr>
+                </thead>
+                <tbody>
+                {%for item in items%}
+                    <tr>
+                        <td>{{ item.product.name }}</td>
+                        <td>{{ item.product.price }}</td>
+                        <td>{{ item.quantity }}</td>
+                        <td>
+                            <a href="{{ path('cart_add',{'id': item.product.id}) }}" class="btn btn-success btn-sm">
+                                <i class="fa fa-plus"></i>
+                            </a>
+                        </td>
+                        <td>
+                            <a href="{{ path('cart_removeOne',{'id': item.product.id}) }}" class="btn btn-warning btn-sm">
+                                <i class="fa fa-minus"></i>
+                            </a>
+                        </td>
+
+                        <td>{{item.product.price * item.quantity  }}</td>
+                        <td>
+                            <a href="{{ path('cart_remove',{'id': item.product.id}) }}" class="btn btn-danger btn-sm">
+                                <i class="fa fa-trash"></i>
+                            </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+                <tfoot>
+                <tr>
+                    <td colspan="5" class="text-right" style="font-size: 1.2rem; font-weight: bold;">Total:</td>
+                    <td style="font-size: 1.2rem; font-weight: bold;">{{ total }}</td>
+                    <td></td>
+                </tr>
+                </tfoot>
+            </table>
+        {% else %}
+            <p>Surprise, c'est vide !</p>
+        {% endif %}
+    </div>
+
+
+
+{% endblock %}

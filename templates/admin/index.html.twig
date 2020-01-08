@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Gerer Nos Biens{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                {% include'admin/_filter.html.twig' with {form: form, min: min, max: max} only %}
+            </div>
+            <div class="col-md-9">
+                <div class="d-flex justify-content-end mb-2">
+                    <h5>Vous avez <strong>{{ totalProd}} </strong> dans votre base de données</h5>
+                    <a href="{{ path('product.admin.create') }}" class="btn btn-primary"> Ajouter un produit</a>
+                    {{ knp_pagination_sortable(products, 'Prix', 'p.price') }}
+                    {{ knp_pagination_sortable(products, 'Promo', 'p.promo') }}
+                </div>
+                <div class="grid">
+                    {% for product in products %}
+                        {% include 'admin/_cart.html.twig' with {product: product} only %}
+                    {% endfor%}
+                </div>
+
+                <div class="pt-2 float-right">
+                    {{ knp_pagination_render(products) }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
