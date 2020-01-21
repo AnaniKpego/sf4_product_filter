@@ -1,0 +1,119 @@
+<div class="container form-signin" id="app">
+
+    {{ form_start(form) }}
+    <section class="form-group">
+        <div class="col-md-12"> <span v-for="error in errors" class="text-warning"><strong>${error}</strong></span></div>
+    </section>
+    <section class="form-group" v-if="step == 1">
+        <div class="col-md-12">{{ form_row(form.last_name, {attr: {'v-model': 'user.last_name'}}) }}</div>
+        <div class="col-md-12">{{ form_row(form.first_name, {attr: {'v-model': 'user.first_name'}}) }}</div>
+    </section>
+    <section class="form-group" v-if="step == 2">
+        <div class="col-md-12">{{ form_row(form.country, {attr: {'v-model': 'user.country'}}) }}</div>
+        <div class="col-md-12">{{ form_row(form.city, {attr: {'v-model': 'user.city'}}) }}</div>
+    </section>
+    <section class="form-group" v-if="step == 3">
+        <div class="col-md-12">{{ form_row(form.adress, {attr: {'v-model': 'user.adress'}}) }}</div>
+        <div class="col-md-12">{{ form_row(form.postal_code, {attr: {'v-model': 'user.postal_code'}}) }}</div>
+    </section>
+    <section class="form-group" v-if="step == 4">
+        <div class="col-md-12">{{ form_row(form.email, {attr: {'v-model': 'user.email'}}) }}</div>
+        <div class="col-md-12">{{ form_row(form.password, {attr: {'v-model': 'user.password'}}) }}</div>
+    </section>
+    {{ form_rest(form) }}
+        <div class="col-md-12" v-if="step == 4">
+            <button class="btn btn-primary btn-sm float-right" @click.prevent="sendInfos">{{ button|default('Valider') }}</button>
+        </div>
+
+    {{ form_end(form) }}
+    <section class="form-group">
+        <div class="col-md-12">
+            <button class="btn btn-warning btn-sm" @click.prevent="previousStep" v-if="step > 1">Retour</button>
+            <button class="btn btn-success btn-sm float-right" @click.prevent="nextStep" v-if="step != totalSteps">Suivant</button>
+        </div>
+
+    </section>
+</div>
+
+<script>
+    const App = new Vue({
+        el:'#app',
+        delimiters: ['${', '}'],
+
+        data: {
+            errors:[],
+            step: 1,
+            totalSteps: 4,
+            user: {
+                first_name: null,
+                last_name: null,
+                email: null,
+                country: null,
+                city: null,
+                adress: null,
+                postal_code: null,
+                password: null
+            }
+
+        },
+        methods: {
+            nextStep:function(){
+
+                if (this.step == 1){
+                    if (!this.user.first_name){
+                        this.errors = "Veuillez renseigner votre nom ☺";
+                        return false;
+                    }
+                    if (!this.user.last_name){
+                        this.errors = "Veuillez renseigner votre  prenom ☺";
+                        return false;
+                    }
+                }
+                if (this.step == 2){
+                    if (!this.user.country){
+                        this.errors = "Veuillez renseigner Le pays";
+                        return false;
+                    }
+                    if (!this.user.city){
+                        this.errors = "Veuillez renseigner la ville";
+                        return false;
+                    }
+                }
+                if (this.step == 3){
+                    if (!this.user.adress){
+                        this.errors = "Veuillez renseigner l'adresse";
+                        return false;
+                    }
+                    if (!this.user.postal_code){
+                        this.errors = "Veuillez renseigner le code postal";
+                        return false;
+                    }
+                }
+
+
+                this.step++;
+            },
+            previousStep:function () {
+                this.step--;
+            },
+            sendInfos: function () {
+
+                if (this.step == 4){
+                    if (!this.user.email){
+                        this.errors = "Veuillez renseigner l'email";
+                        return false;
+                    }
+                    if (!this.user.password){
+                        this.errors = "Veuillez renseigner le mot de passe";
+                        return false;
+                    }
+                }
+                this.errors = null;
+                //confirm("Voulez-vous valider le formulaire");
+            }
+        },
+        mounted(){
+
+        }
+    })
+</script>

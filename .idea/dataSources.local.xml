@@ -5,7 +5,6 @@
       <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
       <secret-storage>master_key</secret-storage>
       <auth-required>false</auth-required>
-      <first-sync>true</first-sync>
     </data-source>
     <data-source name="database.db" uuid="42aab368-e6a5-4103-b969-e88ed39be037">
       <database-info product="SQLite" version="3.25.1" jdbc-version="2.1" driver-name="SQLite JDBC" driver-version="3.25.1">
@@ -15,6 +14,10 @@
       <secret-storage>master_key</secret-storage>
       <auth-required>false</auth-required>
       <introspection-schemas>*:main</introspection-schemas>
+    </data-source>
+    <data-source name="database" uuid="b27ac114-4bbe-4b80-8093-563738378135">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+      <auth-required>false</auth-required>
     </data-source>
   </component>
 </project>
